@@ -1,5 +1,7 @@
 # yu · 个人作品集
 
+![License](https://img.shields.io/badge/license-MIT-green) ![React](https://img.shields.io/badge/React-18-61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6)
+
 基于 **React + TypeScript + Vite + Tailwind CSS** 构建的个人项目展示站点，采用深色渐变主题与 Framer Motion 滚动动画。
 
 ## 技术栈
