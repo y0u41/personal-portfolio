@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* 全局深色主题基础样式（背景 #0a0a0a，文字 #ffffff，来自 AGENTS / PRD 设计要求） */
+html {
+  scroll-behavior: smooth; /* 平滑滚动，配合导航锚点 */
+}
+
+body {
+  margin: 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/* 自定义滚动条，增强深色主题观感 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}

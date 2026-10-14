@@ -1,0 +1,14 @@
+# 根 .gitignore 里的 `data/` 会误伤本项目的源码目录 src/data（含 projects/skills/site 数据），此处特例放行
+!src/data/
+!src/data/**
+
+# 标准前端忽略（即便将来把本项目独立成仓也适用）
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+
+# build cache
+*.tsbuildinfo
