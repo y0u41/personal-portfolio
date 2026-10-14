@@ -1,82 +1,94 @@
-# yu · 个人作品集
+# 🎨 yu · 个人作品集
 
-![License](https://img.shields.io/badge/license-MIT-green) ![React](https://img.shields.io/badge/React-18-61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6)
+![License](https://img.shields.io/badge/license-MIT-green) ![React](https://img.shields.io/badge/React-18-61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6) ![Tests](https://img.shields.io/badge/tests-8%20passed-brightgreen)
 
-基于 **React + TypeScript + Vite + Tailwind CSS** 构建的个人项目展示站点，采用深色渐变主题与 Framer Motion 滚动动画。
+> 一个炫酷的深色渐变主题个人作品集网站，展示你的项目和技能 ✨
 
-## 技术栈
+## 这是什么？
+
+基于 **React + TypeScript + Vite + Tailwind CSS** 构建的单页滚动作品集，采用深色渐变主题与 Framer Motion 滚动动画，适合作为个人主页或项目展示页。
+
+**特点**：
+- 🌙 深色渐变主题，视觉效果炫酷
+- 🎬 Framer Motion 滚动入场动画
+- 📱 响应式设计，移动端适配
+- ⚡ Vite 极速开发体验
+- 🎯 内容与组件分离，改数据不动代码
+
+## ✨ 功能特性
+
+- **Header**：毛玻璃固定导航，移动端汉堡菜单
+- **Hero**：姓名 + 头衔 + 简介 + CTA 按钮
+- **About**：个人介绍 + 技能熟练度条
+- **Projects**：项目卡片展示（技术栈标签 + 链接）
+- **Contact**：联系方式 + 社交链接
+- **Footer**：版权信息
+
+## 🛠️ 技术栈
 
 | 类别 | 选型 |
-| --- | --- |
+|------|------|
 | 框架 | React 18 + TypeScript |
 | 构建 | Vite 6 |
-| 样式 | Tailwind CSS v4（`@tailwindcss/vite` 插件接入） |
-| 动画 | Framer Motion（滚动入场 / 错峰动画） |
+| 样式 | Tailwind CSS v4 |
+| 动画 | Framer Motion |
+| 测试 | Vitest + Testing Library |
 
-## 目录结构
+## 📁 目录结构
 
 ```
-Personal portfolio/
-├── index.html              # 入口 HTML（含 SEO / OG / favicon）
-├── vite.config.ts          # Vite + Tailwind 配置
-├── tsconfig*.json          # TypeScript 配置
-├── public/
-│   └── favicon.svg         # 站点图标
-└── src/
-    ├── main.tsx            # 应用入口
-    ├── App.tsx             # 页面装配（Header/Hero/About/Projects/Contact/Footer）
-    ├── index.css           # 全局样式 + Tailwind v4 指令 + 深色主题变量
-    ├── components/         # 6 个区块组件
-    │   ├── Header.tsx
-    │   ├── Hero.tsx
-    │   ├── About.tsx
-    │   ├── Projects.tsx
-    │   ├── Contact.tsx
-    │   └── Footer.tsx
-    └── data/               # 全部可编辑内容集中在此
-        ├── site.ts         # 个人信息（姓名/头衔/头像/简介/关于我/邮箱/GitHub/社交）
-        ├── projects.ts     # 项目列表（名称/截图/描述/技术栈/类型/链接）
-        └── skills.ts       # 技能与熟练度
+personal-portfolio/
+├── src/
+│   ├── components/         # 6 个区块组件
+│   │   ├── Header.tsx      # 导航栏
+│   │   ├── Hero.tsx        # 首屏
+│   │   ├── About.tsx       # 关于我
+│   │   ├── Projects.tsx    # 项目展示
+│   │   ├── Contact.tsx     # 联系方式
+│   │   └── Footer.tsx      # 页脚
+│   ├── data/               # ✏️ 全部内容集中在此
+│   │   ├── site.ts         # 个人信息
+│   │   ├── projects.ts     # 项目列表
+│   │   └── skills.ts       # 技能数据
+│   ├── __tests__/          # 测试（8 个用例）
+│   └── App.tsx             # 页面装配
+├── .github/workflows/      # CI 自动测试
+└── vite.config.ts          # Vite + Tailwind 配置
 ```
 
-## 本地启动
+## 🚀 快速开始
 
 ```bash
-cd Personal portfolio
-npm install      # 本环境若 esbuild 安装失败，改用 npm install --ignore-scripts
-npm run dev      # 打开 http://localhost:5173
+# 1. 安装依赖
+npm install
+
+# 2. 启动开发服务器
+npm run dev
 ```
 
-> Node 版本见 `.nvmrc`（当前 22）。
+打开 **http://localhost:5173** 即可预览。
 
-## 构建与预览
+### 常用命令
 
-```bash
-npm run build    # 产物输出到 dist/
-npm run preview  # 本地预览构建产物
-```
+| 命令 | 说明 |
+|---|---|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 生产构建 |
+| `npm run preview` | 预览构建产物 |
+| `npm test` | 运行测试 |
 
-## 如何替换内容（重要）
+## ✏️ 如何替换内容
 
-所有可编辑内容都集中在 `src/data/`，**修改这些文件即可，无需改动任何组件**：
+所有可编辑内容都在 `src/data/`，**修改这些文件即可，无需改动组件**：
 
-- `site.ts` —— 姓名、头衔、头像、首页简介、关于我、邮箱、GitHub、社交链接
-- `projects.ts` —— 项目列表（名称 / 截图 / 描述 / 技术栈 / 类型 / 链接）
-- `skills.ts` —— 技能名称与熟练度（0–100）
+| 文件 | 内容 |
+|------|------|
+| `site.ts` | 姓名、头衔、头像、简介、邮箱、GitHub |
+| `projects.ts` | 项目列表（名称/截图/描述/技术栈/链接）|
+| `skills.ts` | 技能名称与熟练度（0-100）|
 
-**头像 / 项目截图**请放入 `public/` 目录（如 `public/avatar.jpg`、`public/shots/xxx.png`），
-然后在 `site.ts` / `projects.ts` 里引用 `/avatar.jpg`、`/shots/xxx.png` 这类根路径。
+**头像/截图**放入 `public/` 目录，然后在 data 文件中引用 `/avatar.jpg` 这类根路径。
 
-## 部署
+## 📄 许可证
 
-暂未配置自动部署。未来可接入 Vercel / Netlify / GitHub Pages：
-
-- **构建命令**：`npm run build`
-- **输出目录**：`dist/`
-- **项目根目录**：本文件夹（`项目中`）
-- 若在 GitHub Pages 等需要子路径的场景，需额外配置 Vite 的 `base`。
-
-## 注意事项
-
-- - 根仓库 `.gitignore` 含 `data/` 规则，会误伤本项目的源码目录 `src/data`，
-  已在 `Personal portfolio/.gitignore` 用 `!src/data/` 特例放行，请勿删除该规则。
+[MIT License](LICENSE) © y0u41
